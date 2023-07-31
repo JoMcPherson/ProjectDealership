@@ -148,7 +148,7 @@ def api_list_sales(request):
         # update Automobile to sold
         json_data = json.dumps({"sold": True})
         AutoUrl = (
-            f"http://project-beta-inventory-api-1:8000/api/automobiles/{auto_vin}/"
+            f"http://project-dealership-inventory-api-1:8000/api/automobiles/{auto_vin}/"
         )
         response = requests.put(
             AutoUrl, data=json_data, headers={"Content-Type": "application/json"}

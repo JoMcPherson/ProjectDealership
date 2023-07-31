@@ -1,3 +1,4 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 function Nav() {
@@ -10,60 +11,106 @@ function Nav() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <NavLink className="nav-link active" to="/manufacturers">Manufacturers</NavLink>
+
+            {/* Inventory Department Dropdown */}
+            <li className='nav-item dropdown'>
+              <a className="nav-link dropdown-toggle" href="#" id="inventoryMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Inventory Department
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="inventoryMenu">
+                <li className='dropdown-item'>
+                  <NavLink className="dropdown-item" to="/manufacturers">Manufacturers</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className='dropdown-item'>
+                  <NavLink className="dropdown-item" to="/manufacturers/create">Create a Manufacturer</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className='dropdown-item'>
+                  <NavLink className="dropdown-item" to="/models">Models</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className="dropdown-item">
+                  <NavLink className="dropdown-item" to="/models/create">Create a Model</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className="dropdown-item">
+                  <NavLink className="dropdown-item" to="/automobiles">Automobiles</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className="dropdown-item">
+                  <NavLink className="dropdown-item" to="/automobiles/create">Create an Automobile</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+              </ul>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link active" to="/manufacturers/create">Create a Manufacturer</NavLink>
+
+            {/* Service Department Dropdown */}
+            <li className='nav-item dropdown'>
+              <a className="nav-link dropdown-toggle" href="#" id="serviceMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Service Department
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="serviceMenu">
+                <li className='dropdown-item'>
+                  <NavLink className="dropdown-item" to="/appointments">Appointments</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className='dropdown-item'>
+                  <NavLink className="dropdown-item" to="/appointments/create">Create an Appointment</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className="dropdown-item">
+                  <NavLink className="dropdown-item" to="/technicians">Technicians</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className="dropdown-item">
+                  <NavLink className="dropdown-item" to="/technicians/create">Create a Technician</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className='dropdown-item'>
+                  <NavLink className="dropdown-item" to="/appointments/history">Service History</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+              </ul>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link active" to="/technicians">Technicians</NavLink>
+
+            {/* Sales Department Dropdown */}
+            <li className='nav-item dropdown'>
+              <a className="nav-link dropdown-toggle" href="#" id="salesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Sales Department
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="salesMenu">
+                <li className='nav-item'>
+                  <NavLink className="dropdown-item" to="/salespeople">Salespeople</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className='nav-item'>
+                  <NavLink className="dropdown-item" to="/salespeople/create">Add a Salesperson</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className='nav-item'>
+                  <NavLink className="dropdown-item" to="/salespersonhistory">Salesperson History</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className='nav-item'>
+                  <NavLink className="dropdown-item" to="/sales">Sales</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className='nav-item'>
+                  <NavLink className="dropdown-item" to="/sales/create">Record a Sale</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className='nav-item'>
+                  <NavLink className="dropdown-item" to="/customers">Customers</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+                <li className='nav-item'>
+                  <NavLink className="dropdown-item" to="/customers/create">Add a Customer</NavLink>
+                </li>
+                <div className="dropdown-divider"></div>
+              </ul>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link active" to="/technicians/create">Create a Technician</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link active" to="/models">Models</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link active" to="/models/create">Create a Model</NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink className="nav-link active" to="/appointments">Appointments</NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink className="nav-link active" to="/appointments/create">Create an Appointment</NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink className="nav-link active" to="/appointments/history">Service History</NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink className="nav-link active" to="/automobiles">Automobiles</NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink className="nav-link active" to="/automobiles/create">Create an Automobile</NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink className="nav-link active" to="/salespeople">Salespeople</NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink className="nav-link active" to="/salespeople/create">Add a Salesperson</NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink className="nav-link active" to="/salespersonhistory">Salesperson History</NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink className="nav-link active" to="/sales">Sales</NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink className="nav-link active" to="/sales/create">Record a Sale</NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink className="nav-link active" to="/customers">Customers</NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink className="nav-link active" to="/customers/create">Add a Customer</NavLink>
-            </li>
+
           </ul>
         </div>
       </div>
