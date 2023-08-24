@@ -27,7 +27,7 @@ export default function SalespersonForm({getSalespeople}) {
             setLastName('');
             setEmployeeID('');
 
-            // Refreshes automobile list and redirects
+            // Refreshes salespeople list and redirects
             getSalespeople();
             window.location.href = 'http://localhost:3000/salespeople/';
         }
