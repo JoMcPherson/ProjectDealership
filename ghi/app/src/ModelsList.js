@@ -1,9 +1,9 @@
+import React from 'react';
 
-export default function ModelsList({models}) {
-
+function ModelsList({ models }) {
   return (
-    <div className="my-5 container">
-      <h1>Models</h1>
+    <div className="models-list my-5 container">
+      <h1 className="mb-4">Models</h1>
       <table className="table table-striped">
         <thead>
           <tr>
@@ -12,20 +12,28 @@ export default function ModelsList({models}) {
             <th>Picture</th>
           </tr>
         </thead>
-          <tbody>
-            {models.map(model => {
-              return (
-                <tr key={model.name}>
-                  <td>{model.name}</td>
-                  <td>{model.manufacturer.name}</td>
-                  <td>
-                    <img src={model.picture_url} alt="car model" style={{ width:'100px', height: '100px'}} />
-                    </td>
-                </tr>
-              )
-            })}
-          </tbody>
+        <tbody>
+          {models.map((model) => (
+            <ModelRow key={model.name} model={model} />
+          ))}
+        </tbody>
       </table>
     </div>
-  )
+  );
 }
+
+function ModelRow({ model }) {
+  return (
+    <tr>
+      <td>{model.name}</td>
+      <td>{model.manufacturer.name}</td>
+      <td>
+        <div className="image-container">
+          <img src={model.picture_url} alt="Car Model" className="img-fluid" />
+        </div>
+      </td>
+    </tr>
+  );
+}
+
+export default ModelsList;
